@@ -22,7 +22,7 @@ async def handle_url(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("❗ Please send a valid YouTube URL.")
         return
 
-    await update.message.reply_text("🎧 Downloading and converting...")
+    status_message = await update.message.reply_text("🎧 Downloading...")
 
     try:
         ydl_opts = {
@@ -52,9 +52,11 @@ async def handle_url(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 performer=performer
             )
 
+        await status_message.delete()
         os.remove(filename)
 
     except Exception as e:
+        await status_message.delete()
         await update.message.reply_text(f"❌ Error: {str(e)}")
 
 if __name__ == "__main__":
