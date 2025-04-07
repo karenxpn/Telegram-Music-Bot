@@ -8,6 +8,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         "Just send me any YouTube video or playlist link, and I’ll convert it to high-quality MP3 and send it back to you — fast and easy.\n\n"
         "✅ **What I support:**\n"
         "- Single YouTube videos 🎥\n"
+        "- YouTube playlists (up to 20 items) 📃\n"
         "- Audio files in **MP3 format** 🎧\n\n"
         "🚀 **How to use:**\n"
         "1. Copy the YouTube video or playlist URL\n"
