@@ -41,7 +41,10 @@ async def handle_url(update: Update, context: ContextTypes.DEFAULT_TYPE):
             entries = info.get("entries")
 
             if entries:  # It's a playlist
-                print("entries count =", len(entries))
+                if len(entries) >= 20:
+                    print("entries count =", len(entries))
+                    raise Exception("🚫 Playlist too long!")
+
                 await handle_audio_list(update, entries)
             else:  # It's a single video
                 await handle_single_audio(info, update)
