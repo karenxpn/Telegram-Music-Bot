@@ -1,6 +1,6 @@
 import os
 import yt_dlp
-from telegram import Update, InputFile
+from telegram import Update
 from telegram.ext import ContextTypes
 
 from list_audio import handle_audio_list
